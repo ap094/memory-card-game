@@ -5,10 +5,10 @@ import App from "./App";
 import "./index.scss";
 
 ReactDOM.render(
-    <StrictMode>
-        <GameProvider>
-            <App />
-        </GameProvider>
-    </StrictMode>,
-    document.getElementById("root")
+	<StrictMode>
+		<GameProvider>
+			<App />
+		</GameProvider>
+	</StrictMode>,
+	document.getElementById("root"),
 );

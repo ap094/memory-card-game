@@ -4,11 +4,8 @@ import eslintPlugin from "vite-plugin-eslint";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [
-        react(),
-        eslintPlugin(),
-    ],
-    esbuild: {
-        jsxInject: `import React from "react"`
-    },
+	plugins: [react(), eslintPlugin()],
+	esbuild: {
+		jsxInject: `import React from "react"`,
+	},
 });

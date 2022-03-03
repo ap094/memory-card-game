@@ -4,11 +4,11 @@ import Card from "./Card";
 interface BoardProps {}
 
 const Board: FC<BoardProps> = () => {
-    return (
-        <>
-            <Card />
-        </>
-    );
-}
+	return (
+		<>
+			<Card />
+		</>
+	);
+};
 
 export default Board;
