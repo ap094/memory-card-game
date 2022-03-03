@@ -6,6 +6,8 @@ interface BoardProps {}
 const Board: FC<BoardProps> = () => {
 	return (
 		<>
+			Board
+			<br />
 			<Card />
 		</>
 	);
