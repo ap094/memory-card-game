@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 function swap(array: Array<any>, i: number, j: number) {
 	const temp = array[i];
 	array[i] = array[j];
