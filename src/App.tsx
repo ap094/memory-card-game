@@ -1,17 +1,15 @@
-import Board from "./components/Board";
+import { Actions } from "components/Actions";
+import { Board } from "components/Board";
+import { Results } from "components/Results";
+import "./App.scss";
 
 function App() {
 	return (
-		<main>
-			<section>
-				<h1>Memory Card Game</h1>
-				<div>
-					<p>Moves</p>
-				</div>
-			</section>
-			<section>
-				<Board />
-			</section>
+		<main className="mainContainer">
+			<h1>Memory Card Game</h1>
+			<Actions />
+			<Board />
+			<Results />
 		</main>
 	);
 }
