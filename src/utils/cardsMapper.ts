@@ -1,11 +1,11 @@
-import reactLogo from "images/react-logo.png";
-import angularLogo from "images/angular-logo.png";
-import eslintLogo from "images/eslint-logo.png";
-import jsLogo from "images/js-logo.png";
-import typescriptLogo from "images/typescript-logo.png";
-import vueLogo from "images/vue-logo.png";
-import gatsbyLogo from "images/gatsby-logo.png";
-import githubLogo from "images/github-logo.png";
+import reactLogo from "assets/images/react-logo.png";
+import angularLogo from "assets/images/angular-logo.png";
+import eslintLogo from "assets/images/eslint-logo.png";
+import jsLogo from "assets/images/js-logo.png";
+import typescriptLogo from "assets/images/typescript-logo.png";
+import vueLogo from "assets/images/vue-logo.png";
+import gatsbyLogo from "assets/images/gatsby-logo.png";
+import githubLogo from "assets/images/github-logo.png";
 import { shuffleCards } from "./shuffleCards";
 
 const cards = [
