@@ -25,9 +25,9 @@ module.exports = {
 		eqeqeq: ["error", "always"],
 		"no-undef": "warn",
 		"no-console": "warn",
-		"no-unused-vars": "warn",
 		"react/react-in-jsx-scope": "off",
 		"@typescript-eslint/no-empty-interface": "warn",
+		"@typescript-eslint/no-unused-vars": "warn",
 	},
 	settings: {
 		react: {
