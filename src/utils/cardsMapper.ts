@@ -6,7 +6,7 @@ import typescriptLogo from "assets/images/typescript-logo.png";
 import vueLogo from "assets/images/vue-logo.png";
 import gatsbyLogo from "assets/images/gatsby-logo.png";
 import githubLogo from "assets/images/github-logo.png";
-import { shuffleCards } from "./shuffleCards";
+import { shuffleArray } from "./shuffleArray";
 
 const cards = [
 	{
@@ -44,7 +44,7 @@ const cards = [
 ];
 
 export const getShuffledCards = () =>
-	shuffleCards(
+	shuffleArray(
 		[...cards, ...cards].map((card, index) => ({
 			id: card.name + index,
 			...card,
