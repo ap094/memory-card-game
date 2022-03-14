@@ -1,10 +1,10 @@
 import { StrictMode } from "react";
-import ReactDOM from "react-dom";
+import { render } from "react-dom";
 import { GameProvider } from "context/GameContext";
 import App from "./App";
 import "assets/scss/index.scss";
 
-ReactDOM.render(
+render(
 	<StrictMode>
 		<GameProvider>
 			<App />
