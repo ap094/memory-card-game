@@ -1,8 +1,27 @@
 main {
-    min-height: 100%;
-    padding: 20px 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 50px;
+	min-height: 100%;
+	padding: 20px 40px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+}
+
+h1 {
+	text-align: center;
+}
+
+button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: $blue;
+	padding: 8px 16px;
+	border-radius: 5px;
+	border: unset;
+	font-family: $primary-font;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.9285;
+	cursor: pointer;
 }
