@@ -1,37 +1,44 @@
 .cardContainer {
-    width: 120px;
-    height: 120px;
-    background-color: transparent;
-    border-radius: 4px;
-    perspective: 1000px;
-    cursor: pointer;
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	border-radius: 4px;
+	perspective: 1000px;
+	cursor: pointer;
 
-    .cardInner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        transition: transform 0.5s;
-        transform-style: preserve-3d;
+	&.disabled {
+		cursor: default;
+		pointer-events: none;
+		user-select: none;
+	}
 
-        &.cardFlip {
-            transform: rotateY(180deg);
-        }
-    }
+	.cardInner {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		transition: transform 0.5s;
+		transform-style: preserve-3d;
 
-    .cardFront, .cardBack {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
+		&.cardFlip {
+			transform: rotateY(180deg);
+		}
+	}
 
-        img {
-            width: 100%;
-            height: 100%;
-            border-radius: 2px;
-        }
-    }
+	.cardFront,
+	.cardBack {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		backface-visibility: hidden;
 
-    .cardBack {
-        transform: rotateY(180deg);
-    }
+		img {
+			width: 100%;
+			height: 100%;
+			border-radius: 2px;
+		}
+	}
+
+	.cardBack {
+		transform: rotateY(180deg);
+	}
 }

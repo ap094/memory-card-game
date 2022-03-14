@@ -1,5 +1,12 @@
 import { FC } from "react";
+import { useGameContext } from "hooks/useGameContext";
 
 export const Actions: FC = () => {
-	return <section>Actions</section>;
+	const { resetGame } = useGameContext();
+
+	return (
+		<section>
+			<button onClick={resetGame}>Reset</button>
+		</section>
+	);
 };
