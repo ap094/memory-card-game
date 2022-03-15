@@ -6,7 +6,11 @@ on:
 
 jobs:
   setup:
+    concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [17.x]
     steps:
       - name: Actions checkout
         uses: actions/checkout@v2
@@ -17,10 +21,14 @@ jobs:
 
   build:
     needs: setup
+    concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [17.x]
     steps:
-      # - name: Fetch origin
-      #   run: git pull origin main
+      - name: Fetch origin
+        run: git pull origin main
       - name: Remove node modules
         run: rm -rf node_modules/
       - name: Install dependencies
