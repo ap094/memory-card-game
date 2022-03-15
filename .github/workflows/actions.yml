@@ -35,6 +35,6 @@ jobs:
       - name: Run deploy
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
-          branch: build
-          folder: build
+          branch: build-release
+          folder: dist
           clean: true
