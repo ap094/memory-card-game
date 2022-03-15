@@ -5,6 +5,7 @@ import eslintPlugin from "vite-plugin-eslint";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
+	base: "/memory-card-game/",
 	plugins: [react(), eslintPlugin(), tsconfigPaths()],
 	resolve: {
 		alias: {
