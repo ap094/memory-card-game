@@ -28,7 +28,7 @@ jobs:
         node-version: [17.x]
     steps:
       - name: Fetch origin
-        run: git pull origin main
+        run: git pull
       - name: Remove node modules
         run: rm -rf node_modules/
       - name: Install dependencies
@@ -37,7 +37,7 @@ jobs:
         run: yarn run build
 
   deploy:
-    needs: build
+    needs: [setup, build]
     concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
     strategy:
