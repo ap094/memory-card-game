@@ -3,7 +3,7 @@
 function App() {
 	return (
 		<main>
-			<h1>Memory Card Game - test 2</h1>
+			<h1>Memory Card Game - test build</h1>
 			{/* <Board /> */}
 		</main>
 	);
