@@ -5,36 +5,74 @@ on:
     branches: [ main ]
 
 jobs:
-  build-and-deploy:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Actions checkout
+        uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+  build:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch from origin
+        run: git pull
+      - name: Remove node modules
+        run: rm -rf node_modules/
+      - name: Install dependencies
+        run: yarn cache clean --all && yarn install --frozen-lockfile
+      - name: Run build
+        run: yarn run build
+
+  deploy:
+    needs: build
     concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [17.x]
     steps:
-      - name: Actions checkout
-        uses: actions/checkout@v2
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Fetch from origin
-        run: git pull
-
-      - name: Remove node modules
-        run: rm -rf node_modules/
-
-      - name: Install dependencies
-        run: yarn cache clean --all && yarn install --frozen-lockfile
-
-      - name: Run build
-        run: yarn run build
-
       - name: Run deploy
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
           branch: build-release
           folder: dist
           clean: true
+
+  # build-and-deploy:
+    # concurrency: ci-${{ github.ref }}
+    # runs-on: ubuntu-latest
+    # strategy:
+    #   matrix:
+    #     node-version: [17.x]
+    # steps:
+      # - name: Actions checkout
+      #   uses: actions/checkout@v2
+
+      # - name: Use Node.js ${{ matrix.node-version }}
+      #   uses: actions/setup-node@v2
+      #   with:
+      #     node-version: ${{ matrix.node-version }}
+
+      # - name: Fetch from origin
+      #   run: git pull
+
+      # - name: Remove node modules
+      #   run: rm -rf node_modules/
+
+      # - name: Install dependencies
+      #   run: yarn cache clean --all && yarn install --frozen-lockfile
+
+      # - name: Run build
+      #   run: yarn run build
+
+      # - name: Run deploy
+      #   uses: JamesIves/github-pages-deploy-action@v4.2.5
+      #   with:
+      #     branch: build-release
+      #     folder: dist
+      #     clean: true
