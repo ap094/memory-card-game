@@ -1,14 +1,16 @@
 {
 	"name": "memory-card-game",
+	"homepage": "https://ap094.github.io/memory-card-game/",
 	"private": true,
 	"version": "0.1.0",
-    "author": "Ante Penić",
+	"author": "Ante Penić",
 	"scripts": {
 		"start": "vite",
 		"build": "tsc && vite build",
 		"preview": "vite preview",
-        "lint": "eslint src --cache --fix --ext .ts,.tsx",
-        "prettier": "prettier --write \"src/**/*.+(ts|tsx|scss)\""
+		"lint": "eslint src --cache --fix --ext .ts,.tsx",
+		"prettier": "prettier --write \"src/**/*.+(ts|tsx|scss)\"",
+		"deploy": "yarn build && gh-pages -d dist"
 	},
 	"dependencies": {
 		"@types/react": "^17.0.33",
@@ -17,6 +19,7 @@
 		"react-dom": "^17.0.2"
 	},
 	"devDependencies": {
+		"@types/node": "^17.0.21",
 		"@typescript-eslint/eslint-plugin": "^5.13.0",
 		"@typescript-eslint/parser": "^5.13.0",
 		"@vitejs/plugin-react": "^1.0.7",
@@ -26,6 +29,7 @@
 		"eslint-plugin-import": "^2.25.4",
 		"eslint-plugin-react": "^7.29.2",
 		"eslint-plugin-react-hooks": "^4.3.0",
+		"gh-pages": "^3.2.3",
 		"husky": "^7.0.4",
 		"lint-staged": "^12.3.4",
 		"prettier": "^2.5.1",
