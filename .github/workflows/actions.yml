@@ -19,8 +19,8 @@ jobs:
     needs: setup
     runs-on: ubuntu-latest
     steps:
-      - name: Fetch from origin
-        run: git pull
+      - name: Fetch origin
+        run: git pull origin main
       - name: Remove node modules
         run: rm -rf node_modules/
       - name: Install dependencies
