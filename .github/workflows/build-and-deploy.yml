@@ -1,0 +1,26 @@
+# name: build and deploy
+
+# on:
+#   push:
+#     branches: [ main ]
+#   pull_request:
+#     branches: [ main ]
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     strategy:
+#       matrix:
+#         node-version: [14.x, 16.x, 17.x]
+#     steps:
+#       - uses: actions/checkout@v2
+#       - name: Use Node.js ${{ matrix.node-version }}
+#         uses: actions/setup-node@v2
+#         with:
+#           node-version: ${{ matrix.node-version }}
+#       - name: Remove node modules
+#         run: rm -rf node_modules/
+#       - name: Install dependencies
+#         run: yarn cache clean --all && yarn install --frozen-lockfile
+#       - name: Run build
+#         run: yarn run build
