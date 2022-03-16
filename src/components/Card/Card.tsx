@@ -13,7 +13,7 @@ interface ICardProps {
 
 export const Card: FC<ICardProps> = ({ card, isFlipped, isDisabled, onClick }) => {
 	const handleCardClick = () => {
-		if (isDisabled || isFlipped) return;
+		if (isDisabled) return;
 		onClick(card);
 	};
 

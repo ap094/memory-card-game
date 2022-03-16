@@ -1,12 +1,13 @@
 import { FC } from "react";
-import { useGameContext } from "hooks/useGameContext";
 
-export const Actions: FC = () => {
-	const { resetGame } = useGameContext();
+interface IActionsProps {
+	onGameReset: () => void;
+}
 
+export const Actions: FC<IActionsProps> = ({ onGameReset }) => {
 	return (
 		<section>
-			<button onClick={resetGame}>Reset</button>
+			<button onClick={onGameReset}>Reset</button>
 		</section>
 	);
 };

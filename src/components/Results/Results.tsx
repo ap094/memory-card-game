@@ -8,7 +8,7 @@ export const Results: FC = () => {
 	return (
 		<section className={styles.resultsSection}>
 			<p>Moves: {state.moves}</p>
-			<p>Best time: {state.bestTime}</p>
+			{/* <p>Best time: {state.bestTime}</p> */}
 		</section>
 	);
 };
