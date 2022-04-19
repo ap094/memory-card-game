@@ -1,11 +1,14 @@
-import { Board } from "components/Board";
+import { StrictMode } from "react";
+import { Main } from "components/Main";
+import { GameProvider } from "context/GameContext";
 
 function App() {
 	return (
-		<main>
-			<h1>Memory Card Game</h1>
-			<Board />
-		</main>
+		<StrictMode>
+			<GameProvider>
+				<Main />
+			</GameProvider>
+		</StrictMode>
 	);
 }
 
